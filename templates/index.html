@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Vehicle Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}"
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="{{ url_for('static', filename='css/loggo.png') }}" alt="Mon image" height="50" width="70">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Welcome</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <h1 style="color: #2EBEB4">Vehicle Classification</h1>
+        <p>Classify your vehicle using the following features:</p>
+
+        <form action="/predict" method="post" class="input-container">
+            <div class="input-row">
+                <label for="COMPACTNESS" class="feature-input-label">Compactness:</label>
+                <input type="text" id="COMPACTNESS" name="COMPACTNESS" class="feature-input" required>
+            </div>
+
+            <div class="input-row">
+                <label for="MAX.LENGTH_ASPECT_RATIO" class="feature-input-label">Max length a:ratio:</label>
+                <input type="text" id="MAX.LENGTH_ASPECT_RATIO" name="MAX.LENGTH_ASPECT_RATIO" class="feature-input" required>
+            </div>
+
+            <div class="input-row">
+                <label for="SCALED_VARIANCE_MINOR" class="feature-input-label">Scaled variance minor:</label>
+                <input type="text" id="SCALED_VARIANCE_MINOR" name="SCALED_VARIANCE_MINOR" class="feature-input" required>
+            </div>
+
+            <div class="input-row">
+                <label for="MAX.LENGTH_RECTANGULARITY" class="feature-input-label">Max length rectangularity:</label>
+                <input type="text" id="MAX.LENGTH_RECTANGULARITY" name="MAX.LENGTH_RECTANGULARITY" class="feature-input" required>
+            </div>
+
+            <!-- Add more input rows as needed -->
+
+            <button type="submit" class="submit-button">Classify Vehicle</button>
+        </form>
+    </div>
+</body>
+</html>

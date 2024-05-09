@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Vehicle Classification Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}"
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="{{ url_for('static', filename='css/loggo.png') }}" alt="Mon image" height="50" width="70">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Welcome</a></li>
+            </ul>
+    </div>
+    <div class="content">
+        <h1 style="color: #2EBEB4">Vehicle Classification result</h1>
+        {% if prediction_result is defined %}
+        
+            <p>The predicted class is: {{ prediction_result }}</p>
+        
+        {% endif %}
+        {% if error_message is defined %}
+    
+            <p>An error occurred while processing your request. Please ensure that you have provided valid input data.</p>
+        {% endif %}
+    </div>
+
+    
+</body>
+</html>
